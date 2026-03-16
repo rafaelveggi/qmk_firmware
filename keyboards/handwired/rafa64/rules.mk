@@ -1,0 +1,3 @@
+MCu = 2040
+BOOTLOADER = rp2040
+
