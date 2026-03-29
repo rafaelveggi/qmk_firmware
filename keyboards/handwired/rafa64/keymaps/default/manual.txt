@@ -1,0 +1,60 @@
+AEK64 KEYBOARD REFERENCE
+RP2040 · handwired · tap/hold layout
+================================================================================
+
+LAYER 0 - BASE
+┌─────────┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
+│Esc(`x2) │ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │ - │ = │ Bksp  │
+├─────────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──────┤
+│ Tab      │ Q │ W │ E │ R │ T │ Y │ U │ I │ O │ P │ [ │ ] │ Del  │
+├──────────├───┤───┤───┤───┤───┤───┤───┤───┤───┤───┤───┤───┴──────┤
+│Home/Shf  │GUI│ALT│Ctr│Shf│ G │ H │Shf│Ctl│ALT│GUI│'" │   Enter  │
+├──────────┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──┬┴──────────┤
+│  End/Shf    │ Z │ X │ C │ V │ B │ N │ M │ ,<│ .>│ /?│   ↑/Shf   │
+├──────────┬──┴─┬─┴──┬┴───┴───┴───┴───┴───┤───┴─┬─┴───┤─────┬─────┤
+│  ALT+Tab │GUI │LALT│        Space       │ \|FN│←AlGr│↓RGUI│→Rctl│
+└──────────┴────┴────┴────────────────────┴─────┴─────┴─────┘─────┘
+
+LAYER 1 - FN  (hold \|) - All other keys pass through to layer 0
+┌──┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬──┐
+│ x│ F1 │ F2 │ F3 │ F4 │ F5 │ F6 │ F7 │ F8 │ F9 │F10 │F11 │F12 │ x│
+└──┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴──┘
+
+================================================================================
+TAP / HOLD REFERENCE
+
+Key            Tap        Hold
+─────────────────────────────────────────
+Grave          Esc        ` (double tap)
+Caps           Home       Shift
+L Shift        End        Shift
+R Shift        ↑          Shift
+\|             \|         Fn layer
+Bottom-left    ALT+Tab    —
+Nav ←          ←          AltGr
+Nav ↓          ↓          RGUI
+Nav →          →          RCtrl
+
+HOME ROW MODS (GACS)
+
+Key   Tap   Hold        Key   Tap   Hold
+────────────────────    ────────────────────
+A     A     GUI         J     J     Shift
+S     S     Alt         K     K     Ctrl
+D     D     Ctrl        L     L     Alt
+F     F     Shift       ;     ;     GUI
+
+================================================================================
+FLASHING
+
+  qmk flash -kb handwired/rafa64 -km default
+
+  Bootloader: hold top-left key and press Reset.
+  Board appears as USB drive (RPI-RP2). If not automounted:
+
+  sudo mkdir -p /mnt/rp2040
+  sudo mount /dev/sda /mnt/rp2040
+  sudo cp handwired_rafa64_default.uf2 /mnt/rp2040/
+  sudo umount /mnt/rp2040
+
+================================================================================
